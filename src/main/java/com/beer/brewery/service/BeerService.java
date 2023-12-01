@@ -49,6 +49,7 @@ public class BeerService {
                 .orElseThrow(() -> new NotFoundEntity("TypeBeer", request.getType()));
         final var b = new Beer(request);
         b.setType(tb);
+        b.setId(id);
         br.save(b);
         return new BeerResponseDTO(b);
     }
